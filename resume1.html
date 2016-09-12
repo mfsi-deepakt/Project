@@ -1,5 +1,7 @@
-<html>
-<head>
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8"/>
 <script>
 
 function showhide(x)
@@ -38,15 +40,17 @@ height:40px;
 {
 background-color:#e6ffee;
 }
+	
 
 
-div {
+#inner_div_1, #inner_div_2,#inner_div_3, #inner_div_4, #inner_div_5, #inner_div_6, #inner_div_7 {
 
 height:30px;
-width:100%;
- padding: 0px 0px 10px 5px; 
+width:99%;
+padding: 0px 0px 10px 0px; 
 font-weight:bold;
-font-size: 20px
+font-size: 20px;
+	
 }
 
 td{
@@ -61,45 +65,59 @@ font-size : 20px;
 tr:nth-child(even) {
     background-color: #dddddd;
 }
-
+	#main_div
+	{
+		border: 5px solid #dddddd;
+		margin:0px 100px 0px 100px;
+		padding: 5px 5px 5px 10px;
+		border-radius:5px;
+		box-shadow: 10px 10px 5px #888888;
+		background-color: #dddddd;
+		
+	}
+h2 {
+    position: fixed;
+    left: 45%;
+    top: s0px;
+}
 </style>
 <title>
 My Resume
 </title>
+	</head>
 <body>
+	<div id="main_div">
+		
+		<h2> RESUME </h2>
+	<br>	
 <b>Deepak Tomar</b>
 <br>
 <br>
-MALE, DOB-26/10/1994 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b>Contact No:</b> +91 8802774072
+MALE, DOB-26/10/1994 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Contact No:</b> +91 8802774072
 <br>
 <b>EMAIL :</b> deepak.12cs176@abes.ac.in
 <hr><hr>
 
-<div><button class="button"  onclick="showhide('careerObjective')">Career objective</button>
+<div id="inner_div_1" ><button class="button"  onclick="showhide('careerObjective')">Career objective</button>
 </div>
-<p style="font-size: 20px;display:none" id="careerObjective" >
+<p style="font-size: 20px;display:none;background-color: #f2ffe6" id="careerObjective" >
 To work in an organization that will give me a platform to utilize my technical skills and
 enrich my knowledge in the process to help in corporate growth with my initiative and
 managerial skills and to excel in the field of Computer Science and Engineering.
 </p>
 <br>
 <br>
-<div>
+<div id="inner_div_2">
 <button class="button"  onclick="showhide('academicQualifications')">
 Academic Qualifications</button>
 
 </div>
 <br>
 
-<ul id="academicQualifications" style="display:none">
+<ul id="academicQualifications" style="display:none;background-color: #ffcccc">
 <li>Pursued Bachelor of Technology from ABES Engineering College, Ghaziabad affiliated
 to U.P.T.U Lucknow with 70.22% under Computer Science and Engineering, year of
 passing 2016. </li>
@@ -108,87 +126,88 @@ passing 2016. </li>
 </ul>
 <br>
 
-<div>
+<div id="inner_div_3">
 <button class="button"  onclick="showhide('technical_skills')">
 Technical skills</button>
 </div>
 <br>
      
-		<ul id="technical_skills" style="display:none">
-			<li>Programming languages &nbsp&nbsp&nbsp&nbsp: &nbsp&nbspJAVA, JSP, C, C++</li>
-			<li>Query Langusge    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: &nbsp&nbspSQL, HTML, CSS</li>
-			<li>IDE&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp&nbsp NetBeans</li>
-			<li>Operating System &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp&nbsp   Windows, Linux</li>
-			<li>Tools &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp&nbsp   Jmeter</li>
+		<ul id="technical_skills" style="display:none;background-color: #ffe6f2">
+			<li>Programming languages &nbsp;&nbsp;&nbsp;&nbsp; : &nbsp;&nbsp;JAVA, JSP, C, C++</li>
+			<li>Query Langusge    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;SQL, HTML, CSS</li>
+			<li>IDE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp; NetBeans</li>
+			<li>Operating System &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;   Windows, Linux</li>
+			<li>Tools ;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;   Jmeter</li>
 		</ul>
 <br>
 
-<div>
+<div id="inner_div_4">
 <button class="button"  onclick="showhide('projects')">
 Project and mini projects</button>
 </div>
 <br>
 
-		<ol id="projects" style="display:none">
-			<li> Worked on property search system "DREAM DOMINION". &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp[Team members: 2]
+		<ol id="projects" style="display:none;background-color: #ffe6ff">
+			<li> Worked on property search system "DREAM DOMINION". &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Team members: 2]
 			<ul>
-     			<li><b>About project:</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspThis project was about property search, post
+     			<li><b>About project:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This project was about property search, post
 advertisement for sale.</li>
-			         <li><b>Duration: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b>20 Days
+			         <li><b>Duration: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>20 Days
 
 				</li>
-   				<li><b>Technology Used:</b>&nbsp&nbsp&nbsp&nbsp&nbsp JSP, RMI
+   				<li><b>Technology Used:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; JSP, RMI
 					</li>
 			</ul>
                         <br>
 			</li>
-			<li>Project is about making Web Application. &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			<li>Project is about making Web Application. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 [Team Members: 2]
 				<ul>
-				<li><b>About project: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b>The project is about making a light weight text editor
+				<li><b>About project: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>The project is about making a light weight text editor
 with all basic features of Notepad.</li>
-				<li><b>Duration:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b>10 Days</li>
-				<li><b>Responsibilities&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</b>Implement the working of Notepad</li>
+				<li><b>Duration:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>10 Days</li>
+				<li><b>Responsibilities&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Implement the working of Notepad</li>
 				</ul>
 		        </li>
 
 		</ol>
 
 <br>
-<div>
+<div id="inner_div_5">
 <button class="button"  onclick="showhide('achivements')">
 Achivements</button>
 </div>
 
 <br>
 
-<ul id="achivements" style="display:none">
-Scored 95.4 %ile in Computer Programming, 91.7 %ile in Logical Ability And 99.4 %ile
+<p id="achivements" style="display:none;background-color: #ffe6ee">
+&nbsp;&nbsp;&nbsp;&nbsp;Scored 95.4 %ile in Computer Programming, 91.7 %ile in Logical Ability And 99.4 %ile
 in Quantitative Analysis in AMCAT.
-</ul>
+</p>
 
 <br>
-<div>
+<div id="inner_div_6">
 <button class="button"  onclick="showhide('certifiactes')">
 Certificates</button>
 </div>
 <br>
 
-<ul id="certifiactes" style="display:none">
+<ul id="certifiactes" style="display:none;background-color: #cce6ff">
 <li>Certification of training in 'JAVA' from Sunrise Institute, Meerut</li>
 <li>Participated in "Money Festo 2014" organized by ACM.</li>
 <li>Participated in "Manthan National Competition" organized by CAG.</li>
-<li>National Conference on Computer Intelligence & Robotics by NCCIR 2014</li>
+<li>National Conference on Computer Intelligence ;& Robotics by NCCIR 2014</li>
 </ul>
 
 <br>
 
-<div>
+<div id="inner_div_7">
 <button class="button"  onclick="showhide('personalDetails')">
 Personal details </button>
 </div>
-<p id="personalDetails" style="display:none">
-<table style="padding: 0px 0px 0px 30px">
+	
+<div id="personalDetails" style="display:none;width=100%;background-color: #ffffe6"><table style="padding: 0px 0px 0px 30px;">
 
 <tr><td>&#9642; Father's name :-</td>
 <td>Shivkumar Tomar</td>
@@ -205,11 +224,9 @@ Personal details </button>
 <tr><td>&#9642; Hobbies :-</td>
 <td>Watching sci-fi movies</td>
 </tr>
+	</table></div>
 
-</table>
-</p>
-<p style="text-align:right;padding: 0px 50px 0px 0px;"><b>Deepak Tomar</b></p> 
 
+	</div>
 </body>
-</head>
 </html>
