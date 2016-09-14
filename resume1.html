@@ -2,90 +2,17 @@
 <html lang="en-US">
 	<head>
 		<meta charset="UTF-8"/>
-<script>
-
-function showhide(x)
- {
-       var div = document.getElementById(x);
-if (div.style.display !== "none") {
-    div.style.display = "none";
-     div.style.webkitTransition = 'opacity 1s';
-}
-else {
-    div.style.display = "block";
-
-}
- }
-
-</script>
-<style>
-
-.button {
-    background-color: powderblue;
-    border: 1px solid black;
-height:40px;
-    width: 100%;
-    font-weight:Bold;
-    color: Black;
-    text-align: left;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 20px;
-     margin: 4px 2px; 
-    cursor: pointer;
-     border-radius: 20px;
-}
-
-.button:hover
-{
-background-color:#e6ffee;
-}
-	
-
-
-#inner_div_1, #inner_div_2,#inner_div_3, #inner_div_4, #inner_div_5, #inner_div_6, #inner_div_7 {
-
-height:30px;
-width:99%;
-padding: 0px 0px 10px 0px; 
-font-weight:bold;
-font-size: 20px;
-	
-}
-
-td{
-width: 70%;
-font-size : 20px;
-}
-
-body {
-font-size : 20px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-	#main_div
-	{
-		border: 5px solid #dddddd;
-		margin:0px 100px 0px 100px;
-		padding: 5px 5px 5px 10px;
-		border-radius:5px;
-		box-shadow: 10px 10px 5px #888888;
-		background-color: #dddddd;
-		
-	}
-h2 {
-    position: fixed;
-    left: 45%;
-    top: s0px;
-}
-</style>
+		<link rel="stylesheet" type="text/css" href="CSS/resume.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+ 
+	 
 <title>
 My Resume
 </title>
 	</head>
 <body>
+<script src="JS/resume.js" type="text/javascript"></script>
 	<div id="main_div">
 		
 		<h2> RESUME </h2>
@@ -101,7 +28,7 @@ MALE, DOB-26/10/1994 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
 <b>EMAIL :</b> deepak.12cs176@abes.ac.in
 <hr><hr>
 
-<div id="inner_div_1" ><button class="button"  onclick="showhide('careerObjective')">Career objective</button>
+<div id="inner_div_1" >Career objective<button onclick="showhide('careerObjective','img_1')"><img id="img_1" src= "images/down.jpg" ></button>
 </div>
 <p style="font-size: 20px;display:none;background-color: #f2ffe6" id="careerObjective" >
 To work in an organization that will give me a platform to utilize my technical skills and
@@ -110,9 +37,10 @@ managerial skills and to excel in the field of Computer Science and Engineering.
 </p>
 <br>
 <br>
-<div id="inner_div_2">
-<button class="button"  onclick="showhide('academicQualifications')">
-Academic Qualifications</button>
+<div id="inner_div_2">Academic Qualifications
+<button  onclick="showhide('academicQualifications','img_2')">
+	<img id="img_2" src= "images/down.jpg" >
+</button>
 
 </div>
 <br>
@@ -126,9 +54,11 @@ passing 2016. </li>
 </ul>
 <br>
 
-<div id="inner_div_3">
-<button class="button"  onclick="showhide('technical_skills')">
-Technical skills</button>
+<div id="inner_div_3">Technical skills
+<button  onclick="showhide('technical_skills','img_3')">
+	<img id="img_3" src= "images/down.jpg" >
+
+</button>
 </div>
 <br>
      
@@ -141,9 +71,9 @@ Technical skills</button>
 		</ul>
 <br>
 
-<div id="inner_div_4">
-<button class="button"  onclick="showhide('projects')">
-Project and mini projects</button>
+<div id="inner_div_4">Project and mini projects
+<button    onclick="showhide('projects','img_4')"><img id="img_4" src= "images/down.jpg" >
+</button>
 </div>
 <br>
 
@@ -174,9 +104,9 @@ with all basic features of Notepad.</li>
 		</ol>
 
 <br>
-<div id="inner_div_5">
-<button class="button"  onclick="showhide('achivements')">
-Achivements</button>
+<div id="inner_div_5">Achivements
+<button    onclick="showhide('achivements','img_5')"><img id="img_5" src= "images/down.jpg" >
+</button>
 </div>
 
 <br>
@@ -187,9 +117,9 @@ in Quantitative Analysis in AMCAT.
 </p>
 
 <br>
-<div id="inner_div_6">
-<button class="button"  onclick="showhide('certifiactes')">
-Certificates</button>
+<div id="inner_div_6">Certificates
+<button    onclick="showhide('certifiactes','img_7')"><img id="img_7" src= "images/down.jpg" >
+</button>
 </div>
 <br>
 
@@ -202,9 +132,9 @@ Certificates</button>
 
 <br>
 
-<div id="inner_div_7">
-<button class="button"  onclick="showhide('personalDetails')">
-Personal details </button>
+<div id="inner_div_7">Personal details 
+<button    onclick="showhide('personalDetails','img_6')"><img id="img_6" src= "images/down.jpg" >
+</button>
 </div>
 	
 <div id="personalDetails" style="display:none;width=100%;background-color: #ffffe6"><table style="padding: 0px 0px 0px 30px;">
