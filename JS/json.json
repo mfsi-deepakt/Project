@@ -1,0 +1,41 @@
+[
+{
+	"name":"Deepak Tomar",
+	"sex":"Male",
+	 "dob":"26/10/1994",
+	 "email" :"deepak.12cs176@abes.ac.in",
+	 "contact_no" : "8802774072",
+	  "objective" : " To work in an organization that will give me a platform to utilize my technical skills and enrich my knowledge in the process to help in corporate growth with my initiative and managerial skills and to excel in the field of Computer Science and Engineering.",
+	  "academic" : [
+	       { "education" : "Pursued Bachelor of Technology from ABES Engineering College, Ghaziabad affiliated to U.P.T.U Lucknow with 70.22% under Computer Science and Engineering, year of passing 2016. ","percentage":"70.22"},
+	       {"education": "Passed Intermediate from B.B.S.S.M Inter College Meerut, with 80% in 2011.","percentage":"80"},
+	       {"education":"Passed High School from B.B.S.S.M Inter College Meerut, with 66.66% in 2009.","percentage":"67"}
+	  ],
+     "skills" : [
+      {"languages":["JAVA","JSP","C","c++"],
+      "queryLanguage":["SQL","HTML","CSS"],
+     "IDE":["NetBeans","codeblock"],
+     "os": ["Windows","Linux"],
+     "Tools":"Jmeter"
+       }
+       ],
+       "projects": [
+        {"description":" Worked on property search system \"DREAM DOMINION\".","member":"2","about":" This project was about property search, post advertisement for sale.","duration":"20 days","technology":["JSP","RMI"]},
+        {"description":"Project is about making Web Application.","member":"2","about":"The project is about making a light weight text editor with all basic features of Notepad.","duration":"10 days", "technology":"JAVA"}
+       ],
+
+       "achivements":"Scored 95.4 %ile in Computer Programming, 91.7 %ile in Logical Ability And 99.4 %ile in Quantitative Analysis in AMCAT. ",
+       "certi": [
+       {"details":[
+                  "Certification of training in 'JAVA' from Sunrise Institute, Meerut",
+                  "Participated in \"Money Festo 2014\" organized by ACM.",
+                  "Participated in \"Manthan National Competition\" organized by CAG.",
+                  "National Conference on Computer Intelligence & Robotics by NCCIR 2014"
+                  ]
+       }
+       ],
+       "personalDetails" : [
+       {"fathersName":"Shivkumar Tomar","DOB":"26/10/1994","Language":["hindi","english"],"hobbies":"sci-fi movies"}
+       ]
+}
+]
