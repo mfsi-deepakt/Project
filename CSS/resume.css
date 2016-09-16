@@ -1,24 +1,19 @@
 
 #header {
-	width :100%;
+	width :95%;
 	height : 180px;
+
 }
 
-img
+i
 {
-	height:30px;
-    width: 100%;
-}
-
-
-button
-{
-	position :absolute;
+	position: absolute;
 	left:500px;
 }
 
-
-#inner_div_1, #inner_div_2,#inner_div_3, #inner_div_4, #inner_div_5, #inner_div_6, #inner_div_7 {
+ #heading_1, #heading_2, #heading_3,  
+ #heading_4, #heading_5, #heading_6, #heading_7
+  {
 
 height:30px;
 width:95%;
@@ -44,7 +39,7 @@ font-size : 20px;
 tr:nth-child(even) {
     background-color: #dddddd;
 }
-	#main_div
+	.main_section
 	{
 		border: 5px solid #0dddd0;
 		margin:0px 100px 0px 100px;
@@ -60,3 +55,7 @@ h2 {
     top: s0px;
 }
 
+section {
+	padding: 10px 10px 10px 10px;
+	margin: 10px 10px 10px 10px;
+}

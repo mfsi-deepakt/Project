@@ -17,63 +17,88 @@ function writeData(arr) {
       var out = "";
 
       				//header
-      				out='<br><b>'+arr[0].name +'</b><br><br> '+arr[0].sex + ', ' + arr[0].dob +"<p style=\"float:right\"><b>Conatact No :</b>" +arr[0].contact_no +'</p><br><b>EMAIL : </b>'+ arr[0].email+'<br><br><hr><hr>';
-				    document.getElementById("header").innerHTML=out; 
+      				document.getElementById("name").innerHTML=arr[0].name;
+				    document.getElementById("num").innerHTML=arr[0].contact_no;
+				    document.getElementById("email").innerHTML=arr[0].email;
+				    document.getElementById("dob").innerHTML=arr[0].sex +", " +arr[0].dob; 
+
 				     
 				    // add career objective in the resume
 				    out=arr[0].objective;    
 				    document.getElementById("careerObjective").innerHTML = out;
 				   
-				    // write academics in the reumse
-				    out='<li>'+ arr[0].academic[0].education+ '</li> <li>'+ arr[0].academic[1].education + '</li><li>'+arr[0].academic[2].education + '</li>';
-				    document.getElementById("academicQualifications").innerHTML=out;
+				    // write academics in the resume
+
+				    var list = document.getElementsByTagName("UL")[0];
+                    list.getElementsByTagName("LI")[0].innerHTML = ""+arr[0].academic[0].education;
+                    list.getElementsByTagName("LI")[1].innerHTML = ""+arr[0].academic[1].education;
+                    list.getElementsByTagName("LI")[2].innerHTML = ""+arr[0].academic[2].education;
 				   
 				    // write technical skills
-				    out='<li> <pre> Programming Languages :   '+ arr[0].skills[0].languages[0] +', ' +arr[0].skills[0].languages[1] +', '+arr[0].skills[0].languages[2]+', '+arr[0].skills[0].languages[3] + 
-				    '</pre></li><li><pre> Query Language        :   ' + arr[0].skills[0].queryLanguage[0] +  ', ' + arr[0].skills[0].queryLanguage[1] +', ' +arr[0].skills[0].queryLanguage[2] + 
-				    '</pre></li><li><pre> IDE                   :   ' + arr[0].skills[0].IDE[0] + ', ' + arr[0].skills[0].IDE[1]+ 
-				    '</pre></li><li><pre> Operating System      :   '+arr[0].skills[0].os[0] +', '+arr[0].skills[0].os[1] +
-				    '</pre></li><li><pre> Tools                 :   '+arr[0].skills[0].Tools +'</pre></li>'; 
-				    document.getElementById("technical_skills").innerHTML = out; 
+				    document.getElementById("pr").innerHTML = arr[0].skills[0].languages.join(", ");
+				    document.getElementById("ql").innerHTML = arr[0].skills[0].queryLanguage.join(", ");
+				    document.getElementById("ide").innerHTML = arr[0].skills[0].IDE.join(", ");
+				    document.getElementById("os").innerHTML = arr[0].skills[0].os.join(", ");
+				    document.getElementById("te").innerHTML = arr[0].skills[0].Tools; 
 
 				    // Projects
-				    out='<li><pre>'+ arr[0].projects[0].description + '                  [Team Members] = '+ arr[0].projects[0].member + 
-				    '</pre><ul><li><pre> <b>About Project      :  </b>' + arr[0].projects[0].about + '</pre></li><li><pre> <b>Duration           :   </b>' + arr[0].projects[0].duration +
-				    ' </pre></li><li><pre> <b>Technology         :   </b>' + arr[0].projects[0].technology+ '</pre></li></ul><br> </li><li><pre>'+
-				    arr[0].projects[1].description + '                  [Team Members] = '+ arr[0].projects[1].member + 
-				    '</pre><ul><li><pre> <b>About Project      :  </b>' + arr[0].projects[1].about + '</pre></li><li><pre> <b>Duration           :   </b>' + arr[0].projects[1].duration +
-				    ' </pre></li><li><pre> <b>Technology         :   </b>' + arr[0].projects[1].technology+ '</pre></li></ul><br> </li>';
-				    document.getElementById("projects").innerHTML = out;
+
+				    var template = document.getElementById('template').innerHTML;
+
+  					//Parse it (optional, only necessary if template is to be used again)
+  					Mustache.parse(template);
+
+  					//Render the data into the template
+  					var rendered = Mustache.render(template,{project_1: arr[0].projects[0].description, project_2 :arr[0].projects[1].description, about_1:arr[0].projects[0].about,
+  						duration_1:arr[0].projects[0].duration, tech_1:arr[0].projects[0].technology,about_2:arr[0].projects[1].about,
+  						duration_2:arr[0].projects[1].duration,tech_2:arr[0].projects[1].technology,mem_1:arr[0].projects[0].member, mem_2 : arr[0].projects[1].member});
+
+  					//Overwrite the contents of #target with the rendered HTML
+  					document.getElementById("projects").innerHTML = rendered;
 				              
 				    //achievements
 				    out=''+arr[0].achivements;
 				    document.getElementById("achivements").innerHTML = out;
 				    
 				    // certifiactes
-                    out='<li>'+arr[0].certi[0].details[0] +'</li><li>'+arr[0].certi[0].details[1] + '</li><li>' +arr[0].certi[0].details[2] +'</li><li>' +arr[0].certi[0].details[3] + '</li>';
-				    document.getElementById("certifiactes").innerHTML = out;
-
+				    var list2 = document.getElementsByTagName("UL")[4];
+                    list2.getElementsByTagName("LI")[0].innerHTML = ""+arr[0].certi[0].details[0];
+                    list2.getElementsByTagName("LI")[1].innerHTML = ""+arr[0].certi[0].details[1];
+                    list2.getElementsByTagName("LI")[2].innerHTML = ""+arr[0].certi[0].details[2];
+                    list2.getElementsByTagName("LI")[3].innerHTML = ""+arr[0].certi[0].details[3];
+                 
 				    //personal dtails
-				    out='<table style="padding: 0px 0px 0px 30px;"><tr><td>&#9642;Father-s name    :-</td><td>'+ arr[0].personalDetails[0].fathersName+'</td></tr><tr><td>&#9642; Date of Birth    :-</td><td>'+
-				    arr[0].personalDetails[0].DOB +'</td></tr><tr><td>&#9642; Language         :-</td><td>'+arr[0].personalDetails[0].Language[0] +", "+ arr[0].personalDetails[0].Language[1]+ '</td></tr><tr><td>&#9642; Hobbies          :-</td><td>' +
-				    arr[0].personalDetails[0].hobbies+ '</td></tr></table>';
-				    document.getElementById("personalDetails").innerHTML= out;
+                     add_details("mytr1",arr[0].personalDetails[0].fathersName);
+                     add_details("mytr2",arr[0].personalDetails[0].DOB);
+                     add_details("mytr3",arr[0].personalDetails[0].Language.join(", "));
+                     add_details("mytr4",arr[0].personalDetails[0].hobbies);
+
+
+                    
+
 
 }
 
-
-function showhide(x,current)
+function add_details(td_id, text)
  {
-      	 var div = document.getElementById(x);
-	   	 var current=document.getElementById(current);
+     var x = document.createElement("TD");
+     var t = document.createTextNode(text);
+     x.appendChild(t);
+    document.getElementById(td_id).appendChild(x); 
+ }
+
+function showhide(this_ele, show_id)
+ {
+      	 var div = document.getElementById(show_id);
+      	 var ele = document.getElementById(this_ele);
 	     if (div.style.display !== "none") {
     	 div.style.display = "none";
-		 current.src = "images/down.jpg";
+    	 ele.className ="fa fa-arrow-down";
+		 
 }
 else 
 {
          div.style.display = "block";
-	     current.src = "images/up.jpg";
-
+	    ele.className ="fa fa-arrow-up";
 }
 }
