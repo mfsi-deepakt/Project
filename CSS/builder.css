@@ -1,0 +1,68 @@
+#main_body
+{
+	background-color: powderblue;
+	width: 90%;
+	margin: 50px;
+	padding:10px;
+	border: 5px dotted orange;
+   font-size: 25px;
+}
+p
+{
+	text-align: center;
+	height:10px;
+}
+textarea {
+	margin-top :4px;
+	background-color: #ffffe6 ;
+}
+div {
+	margin:5px;
+	padding:2px;
+	padding-bottom: 20px;
+	border-style: double;
+	padding-left:15px;
+}
+#person_details
+{
+	background-color: #ccffeb;
+	
+}
+input, #person_details textarea, span {
+	background-color: #ffffe6;
+	position: absolute;
+	left:700px;
+	margin:2px;
+}
+#objective textarea {
+	width:98%;
+	max-width: 98%;
+	margin-left: 20px;
+}
+#achievements input , #certificate input
+{
+	width: 800px;
+	background-color: #ffffe6;
+	position: absolute;
+	left:200px;
+	margin:2px;
+
+}
+
+button
+{
+	font-family: arial;
+	font-size: 15px;
+	margin-left: 900px;
+}
+#others input
+{
+	width : 400px;
+	position: absolute;
+	left:300px;
+	margin:2px;
+}
+#projects input
+{
+	width: 400px;
+}
