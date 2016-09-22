@@ -7,67 +7,71 @@
 			Resume Buiilder
 </title>
 </head>
-<body style="background-color:#ffe6e6">
+<body style="background-color:#ffe6e6" onload="focus_()">
 <section id="main_body">
 	
-
 	<div id="person_details">
 		 <p><b>Personal Details</b></p>
 		 <hr><hr>
-	      Name: <input type="text" name="name" id="name" placeholder="Enter your Name"><br>
-	      Email: <input type="text" name="email" id="email" placeholder="Enter your Email"><br>
-	      Sex:  <input type="radio" name="gender" value="male" checked> <i style="position:absolute;left:720px">Male</i>
-                 <input style="position:absolute;left: 800px" type="radio" name="gender" value="female"> 
-                 <i style="position:absolute;left:850px"> Female</i><br>
-          Father's Name: <input type="text" id="fathers_name" name="father_name" placeholder="Enter your father's Naem"><br>
-          Date of Birth: <input type="date" id="bday" name="bday"><br>
-          Contact No: <input type="number" id="number" name="number" placeholder="Enter your Number"><br>
-          Address : <textarea id="add_" name="add_" row="5" cols="50" placeholder="Enter your present address "></textarea>
+	      Name: <input type="text" name="name" id="name" placeholder="Enter your Name" onblur="Form.checkName(this)" maxlength="26" minlength="3"/><br>
+	      Email: <input type="text" name="email" id="email" placeholder="Enter your Email" onblur="Form.checkemail(this)"/><br>
+	      Sex:   <input type="text" id="sex" placeholder="M/F" onblur="Form.checkvalue(this)" maxlength="1" minlength="1"/> <br>
+          Father's Name: <input type="text" id="fathers_name" name="father_name" placeholder="Enter your father's Name" onblur="Form.checkName(this)" maxlength="26" minlength="3"/><br>
+          Date of Birth: <input type="text" id="bday" name="bday" onblur="Form.checkdate(this)" placeholder="## / ## / ####"/><br>
+          Contact No: <input type="text" id="number" name="number" placeholder="Enter your Number" onblur="Form.checknumber(this)"/><br>
+          Address : <textarea id="add_" name="add_" row="5" cols="50" placeholder="Enter your present address " onblur="Form.checkvalue(this)" maxlength="100" minlength="10"></textarea>
       </div>
 
     
       <div id="objective" style="background-color:#ccdcff"> <p><b>Career Objective</b></p><hr><hr>
- 			<textarea id="c_objective" name="c_objective" rows="7"></textarea>
+ 			<textarea id="c_objective" name="c_objective" rows="7" onblur="Form.checkvalue(this)" maxlength="500" minlength="15"></textarea>
       </div>
 
+
+      <div id="education" style="background-color:#ebe0e0">
+      	<p><b>Education</b></p><hr><hr>
+         <ul>
+         	<li>Graduation : <input type="text" id="grad" onblur="Form.checkvalue(this)" maxlength="80" minlength="10"/></li>
+         	<li>12th : <input type="text" id="inter" onblur="Form.checkvalue(this)" maxlength="80" minlength="10"/></li>
+         	<li>10th : <input type="text" id="high" onblur="Form.checkvalue(this)" maxlength="80" minlength="10"/></li>
+         </ul>
+      	
+      </div>
+
+
       <div id="skills" style="background-color:#ddccff"><p><b>Technical Skills</b></p><hr><hr>
-      	Programming Lnaguages : <input type="text" name="p_skills" id="p_skills" placeholder="EX:- c, c++ etc"><br>
-        Query Lnaguages : <input type="text" name="q_skills" id="q_skills" placeholder="EX:- HTML, SQL etc"><br>
-        IDE : <input type="text" name="ide" id="ide" placeholder="EX:- Netbeans etc"><br>
-        Operating Systems : <input type="text" name="os" id="os" placeholder="EX:- windows, mac etc">
+      	Programming Lnaguages : <input type="text" name="p_skills" id="p_skills" placeholder="EX:- c, c++ etc" onblur="Form.checkvalue(this)" maxlength="26" minlength="3"/><br>
+        Query Lnaguages : <input type="text" name="q_skills" id="q_skills" placeholder="EX:- HTML, SQL etc" onblur="Form.checkvalue(this)" maxlength="26" minlength="3"/><br>
+        IDE : <input type="text" name="ide" id="ide" placeholder="EX:- Netbeans etc" onblur="Form.checkvalue(this)" maxlength="26" minlength="3"/><br>
+        Operating Systems : <input type="text" name="os" id="os" placeholder="EX:- windows,mac etc" onblur="Form.checkvalue(this)" maxlength="26" minlength="3"/>
       </div>
 
     
       <div id="projects" style="background-color:#ffb3ff">
       	<p><b>Projects</b></p><hr><hr>
-      	<ol>
-      		<li> Project:
-      			<ul> <li>About Projects: <input type="text"/></li>
-      				<li>Duration: <input type="text" /></li>
-      				<li>Members : <input type="text"/></li>
-      				<li>Technology Used :<input type="text"/> </li>
+      			<ul> 
+              <li>About Project: <input type="text" id="about" onblur="Form.checkvalue_project(this)"maxlength="26" minlength="3"/></li>
+      				<li>Duration: <input type="text" id="dura" onblur="Form.checkvalue_project(this)" maxlength="6" minlength="2"/></li>
+      				<li>Members : <input type="text" id="mem" onblur="Form.checkvalue_project(this)"maxlength="2" minlength="1"/></li>
+      				<li>Technology Used :<input type="text" id="tech" onblur="Form.checkvalue_project(this)" maxlength="26" minlength="3"/></li>
+              <button type="button" onclick="Storedata.save_project(this.parent)"><b> Submit</b> </button>
       			</ul>
-      		</li>
-         </ol>
-
-      <button type="button" onclick="#asf.com"><b> Add More Projects</b></button>
-      </div>
+      		   </div>
 
       <div id="achievements" style="background-color:#ccffe6">
       	<p><b>Achievements</b></p><hr><hr>
-      	<ol>
-      		<li> : <input type="text" placeholder="Ex:- hackathon etc"> </li>
-      	</ol>
-      	<button type="button" onclick="#asf.com"><b> Add More Achievements </b></button>
-      </div>
+         <ol><input type="text" placeholder="Ex:- hackathon etc" onkeydown = "Form.checkvalue_1(this, event.keyCode)" id="achieve" maxlength="50" minlength="5"/> 
+          <button  type="button" onclick="StoreData.save_1(this.previousSibling.previousSibling)" disabled ><b>Submit</b></button> 
+         </ol>
+      	</div>
       
     
       <div id="certificate" style="background-color:#ebebe0">
       	<p><b>Certificates</b></p><hr><hr>
-         <ol>
-      		<li> : <input type="text" placeholder="ex:- JAVA, Oracle etc"></li>
-      	</ol>
-      	<button type="button" onclick="add.ListElement(this.parentNode)"><b> Add More Certificates </b></button>
+         <ol><input type="text" placeholder="ex:- JAVA, Oracle etc" onkeydown = "Form.checkvalue_1(this, event.keyCode)" id="certi" maxlength="50" minlength="5"/>
+         	<button type="button" onclick="StoreData.save_1(this.previousSibling.previousSibling)" disabled><b>Submit</b></button>
+      		</ol>
+      	
       </div>
 
     
@@ -76,23 +80,32 @@
           <ul>
           <li><b>languages :</b> 
           <ol>
-          	<li> <input type="text"></li>
-            <button input="button" onclick="add.ListElement(this.parentNode)"> Add more Language </button>
-          </ol>
+          	<input type="text" placeholder="ex:- hindi" onkeydown = "Form.checkvalue_1(this, event.keyCode)"  id="lang" maxlength="10" minlength="5"/> 
+          	<button input="button" onclick="StoreData.save_1(this.previousSibling.previousSibling)" disabled> <b>Submit </b></button>
+            </ol>
           </li>
            
            <li><b>Hobbies :</b>
            	<ol>
-           		<li> <input type="text"></li>
-           		<button input="button" onclick="add.ListElement(this.parentNode)"> Add more Hobbies </button>
-           	</ol>
+           		<input type="text"onkeydown = "Form.checkvalue_1(this, event.keyCode)" id="hobbies" maxlength="50" minlength="5"/> 
+           		<button input="button" onclick="StoreData.save_1(this.previousSibling.previousSibling)" disabled> <b>Submit</b> </button>
+           		</ol>
            </li>
 
           </ul>
       </div>
+      <div id="show">
+      	<a href="show_resume.html"> Display My Resume </a>
+      </div>
+ 
   </section>
-  <script>
-  var add= new addinpput();
-  </script>
+ 
 </body>
 </html>
+<script src="JS/builder.js" type="text/javascript"></script>
+ <script>
+ function focus_()
+{
+	document.getElementById("name").focus();
+}
+  </script>
