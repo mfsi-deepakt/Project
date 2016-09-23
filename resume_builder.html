@@ -49,27 +49,23 @@
     
       <div id="projects" style="background-color:#ffb3ff">
       	<p><b>Projects</b></p><hr><hr>
-      			<ul> 
-              <li>About Project: <input type="text" id="about" onblur="Form.checkvalue_project(this)"maxlength="26" minlength="3"/></li>
-      				<li>Duration: <input type="text" id="dura" onblur="Form.checkvalue_project(this)" maxlength="6" minlength="2"/></li>
-      				<li>Members : <input type="text" id="mem" onblur="Form.checkvalue_project(this)"maxlength="2" minlength="1"/></li>
-      				<li>Technology Used :<input type="text" id="tech" onblur="Form.checkvalue_project(this)" maxlength="26" minlength="3"/></li>
-              <button type="button" onclick="Storedata.save_project(this.parent)"><b> Submit</b> </button>
-      			</ul>
+      		<ol> <textarea type="text" placeholder="About Project" onkeydown="Form.checkvalue_document(this, event.keyCode)" id="project" minlength="20"></textarea>
+                <button type="button" onclick="StoreData.save_doc(this.previousSibling.previousSibling)" disabled> <b> Add project </b></button>
+            </ol>
       		   </div>
 
       <div id="achievements" style="background-color:#ccffe6">
       	<p><b>Achievements</b></p><hr><hr>
-         <ol><input type="text" placeholder="Ex:- hackathon etc" onkeydown = "Form.checkvalue_1(this, event.keyCode)" id="achieve" maxlength="50" minlength="5"/> 
-          <button  type="button" onclick="StoreData.save_1(this.previousSibling.previousSibling)" disabled ><b>Submit</b></button> 
+         <ol><input type="text" placeholder="Ex:- hackathon etc" onkeydown = "Form.checkvalue_document(this, event.keyCode)" id="achieve" maxlength="50" minlength="5"/> 
+          <button  type="button" onclick="StoreData.save_doc(this.previousSibling.previousSibling)" disabled ><b>Add Achievements</b></button> 
          </ol>
       	</div>
       
     
       <div id="certificate" style="background-color:#ebebe0">
       	<p><b>Certificates</b></p><hr><hr>
-         <ol><input type="text" placeholder="ex:- JAVA, Oracle etc" onkeydown = "Form.checkvalue_1(this, event.keyCode)" id="certi" maxlength="50" minlength="5"/>
-         	<button type="button" onclick="StoreData.save_1(this.previousSibling.previousSibling)" disabled><b>Submit</b></button>
+         <ol><input type="text" placeholder="ex:- JAVA, Oracle etc" onkeydown = "Form.checkvalue_document(this, event.keyCode)" id="certi" maxlength="50" minlength="5"/>
+         	<button type="button" onclick="StoreData.save_doc(this.previousSibling.previousSibling)" disabled><b>Add Certificates</b></button>
       		</ol>
       	
       </div>
@@ -80,22 +76,22 @@
           <ul>
           <li><b>languages :</b> 
           <ol>
-          	<input type="text" placeholder="ex:- hindi" onkeydown = "Form.checkvalue_1(this, event.keyCode)"  id="lang" maxlength="10" minlength="5"/> 
-          	<button input="button" onclick="StoreData.save_1(this.previousSibling.previousSibling)" disabled> <b>Submit </b></button>
+          	<input type="text" placeholder="ex:- hindi" onkeydown = "Form.checkvalue_document(this, event.keyCode)"  id="lang" maxlength="10" minlength="5"/> 
+          	<button input="button" onclick="StoreData.save_doc(this.previousSibling.previousSibling)" disabled> <b>Submit </b></button>
             </ol>
           </li>
            
            <li><b>Hobbies :</b>
            	<ol>
-           		<input type="text"onkeydown = "Form.checkvalue_1(this, event.keyCode)" id="hobbies" maxlength="50" minlength="5"/> 
-           		<button input="button" onclick="StoreData.save_1(this.previousSibling.previousSibling)" disabled> <b>Submit</b> </button>
+           		<input type="text"onkeydown = "Form.checkvalue_document(this, event.keyCode)" id="hobbies" maxlength="50" minlength="5"/> 
+           		<button input="button" onclick="StoreData.save_doc(this.previousSibling.previousSibling)" disabled> <b>Submit</b> </button>
            		</ol>
            </li>
 
           </ul>
       </div>
-      <div id="show">
-      	<a href="show_resume.html"> Display My Resume </a>
+      <div id="show" style="text-align: center">
+      	<a href="show_resume.html" > Display My Resume </a>
       </div>
  
   </section>

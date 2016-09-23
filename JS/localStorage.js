@@ -23,34 +23,33 @@ function writeData() {
 				    document.getElementById("ide").innerHTML = localStorage['ide'];
 				    document.getElementById("os").innerHTML = localStorage['os'];
 
-  				 /*   // Projects
+  				    // Projects
 
-				    var template = document.getElementById('template').innerHTML;
-
-  					//Parse it (optional, only necessary if template is to be used again)
-  					Mustache.parse(template);
-
-  					//Render the data into the template
-  					var rendered = Mustache.render(template,{project_1: arr[0].projects[0].description, project_2 :arr[0].projects[1].description, about_1:arr[0].projects[0].about,
-  						duration_1:arr[0].projects[0].duration, tech_1:arr[0].projects[0].technology,about_2:arr[0].projects[1].about,
-  						duration_2:arr[0].projects[1].duration,tech_2:arr[0].projects[1].technology,mem_1:arr[0].projects[0].member, mem_2 : arr[0].projects[1].member});
-
-  					//Overwrite the contents of #target with the rendered HTML
-  					document.getElementById("projects").innerHTML = rendered; */
+				   for(i=0;i<=localStorage['projectlen'];i++)
+           {
+            var data = localStorage['project'+i];
+            if(data !== "")
+            {
+            addElement.add_list('projects', data);
+           }}
 				              
 				    //achievements
             for(i=0; i<= localStorage['achievelen'];i++)
             {
               var data=localStorage['achieve'+i];
+              if(data !=="")
+              {
               addElement.add_list('achivements', data);
-            }
+            }}
 				     
 				    // certifiactes
              for(i=0; i<= localStorage['certilen'];i++)
             {
               var data=localStorage['certi'+i];
-              addElement.add_list('certifiactes', data);
-            }
+              if(data !== "")
+                { 
+                addElement.add_list('certifiactes', data);
+            }}
           
 				     // personal dtails
                      addElement.add_details("mytr1",localStorage['fathers_name']);
@@ -58,8 +57,13 @@ function writeData() {
                      var data='';
                      for( i=0; i <=localStorage['langlen']; i++)
                      {
-                      data = data+localStorage['lang'+i];
-                      if(i != localStorage['langlen'])
+                      var temp = localStorage['lang'+i];
+                      if(temp !== "")
+                      {
+
+                        data= data+temp;
+                      }
+                      if(i != localStorage['langlen'] )
                       {
                         data=data+", ";
                       }
@@ -68,8 +72,12 @@ function writeData() {
                      data='';
                       for( i=0; i<= localStorage['hobbieslen']; i++)
                       {
-                       data= data +localStorage['hobbies'+i];
-                        if(i != localStorage['hobbieslen'])
+                        var temp= localStorage['hobbies'+i];
+                        if(temop !== "")
+                        {
+                          data= data+temp;
+                        }
+                       if(i != localStorage['hobbieslen'])
                       {
                         data=data+", ";
                       }

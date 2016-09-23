@@ -1,13 +1,25 @@
 var add = add || {
-  	listElement  : function (ele){
+  	listElement  : function (ele, child){
   		ele.nextSibling.nextSibling.disabled= true;
 		var data = ele.value;
 		var li =document.createElement("LI");
 	    var text=document.createTextNode(data);
-		li.appendChild(text);
-		ele.parentNode.appendChild(li);
-		ele.value="";
-		}
+      var button =document.createElement("BUTTON");
+      var id=ele.getAttribute("id");
+      button.setAttribute("id",id+child);
+      button.setAttribute("class", "remove");
+      button.setAttribute("onclick","add.removeElement(this)")
+		  li.appendChild(text);
+      li.appendChild(button);
+		  ele.parentNode.appendChild(li);
+		  ele.value="";
+		},
+    removeElement : function(self)
+    {
+       var id_= self.getAttribute("id");
+       localStorage[id_]="";
+      self.parentNode.parentNode.removeChild(self.parentNode);
+       }
 }
 
 var StoreData = StoreData||{
@@ -21,7 +33,8 @@ var StoreData = StoreData||{
         alert("Your browser does'nt support local storage");
     }
      },
-     save_1 : function (self)
+     
+     save_doc : function (self)
      {
      	
      	var id=self.getAttribute("id");
@@ -33,7 +46,7 @@ var StoreData = StoreData||{
             } else {
         alert("Your browser does'nt support local storage");
                   }
-       add.listElement(self);
+       add.listElement(self,child);
      }
  }
 
@@ -48,11 +61,11 @@ var Form = Form ||{
        if( !(self.value.match(letter)  ) ) 
        { 
         self.style.backgroundColor ="red";
-      	self.focus();
+      	//self.focus();
       } if(self.value.length < min)
       {
        self.style.backgroundColor ="red";
-      	self.focus();	
+      	//self.focus();	
       }
       else 
       { 
@@ -60,10 +73,7 @@ var Form = Form ||{
        self.style.backgroundColor ="#ffffe6";
       }
 	},
-    checkvalue_project : function(self)
-    {
-
-    },
+   
 	checkvalue : function(self)
 	{
        var min=self.getAttribute("minlength");
@@ -111,7 +121,7 @@ var Form = Form ||{
        self.style.backgroundColor ="#ffffe6";
 	 
 	},
-	checkvalue_1 : function(self,key)
+	checkvalue_document : function(self,key)
 	{
        var min=self.getAttribute("minlength");
        if(self.value.length < min)
@@ -121,7 +131,7 @@ var Form = Form ||{
       	self.focus();
       } else if(key==13  && self.style.backgroundColor !== "red")
       { 
-      	 StoreData.save_1(self);
+      	 StoreData.save_doc(self);
     	 self.nextSibling.nextSibling.disabled= false;
          self.style.backgroundColor ="#ffffe6";
       }
