@@ -61,11 +61,11 @@ var Form = Form ||{
        if( !(self.value.match(letter)  ) ) 
        { 
         self.style.backgroundColor ="red";
-      	//self.focus();
+      	self.focus();
       } if(self.value.length < min)
       {
        self.style.backgroundColor ="red";
-      	//self.focus();	
+      	self.focus();	
       }
       else 
       { 
@@ -80,7 +80,7 @@ var Form = Form ||{
        if(self.value.length < min)
        { 
         self.style.backgroundColor ="red";
-      	//self.focus();
+      	self.focus();
       } else 
       { 
       	StoreData.save(self);
@@ -94,7 +94,7 @@ var Form = Form ||{
         if(!self.value.match(phoneno)) 
         {
       	self.style.backgroundColor ="red";
-      	//self.focus();
+      	self.focus();
       } else 
       { StoreData.save(self);
        self.style.backgroundColor ="#ffffe6";
@@ -108,7 +108,7 @@ var Form = Form ||{
 		if(!email.test(self.value))
 		{
 			self.style.backgroundColor ="red";
-      	  //  self.focus();
+      	    self.focus();
 		}else
 		{    StoreData.save(self);
 			self.style.backgroundColor ="#ffffe6";}
