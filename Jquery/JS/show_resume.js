@@ -1,85 +1,67 @@
 
 $(document).ready( function() {
       				//header
-      				$("#name").html(localStorage['name']);
-              $("#num").html(localStorage['number']);
-				      $("#email").html(localStorage['email']);
-				      $("#dob").html(localStorage['bday']); 
+              var info= JSON.parse(localStorage.getItem('data_deep'));
+      				$("#name").html(info.name);
+              $("#num").html(info.number);
+				      $("#email").html(info.email);
+				      $("#dob").html(info.datepicker); 
 
 				     
 				    // add career objective in the resume
-				      $("#careerObjective").html(localStorage['c_objective']);
+				      $("#careerObjective").html(info.c_objective);
 
 				    // write academics in the resume
 
-				     $("#academicQualifications li:nth-child(1)").html("akdakdhadk");
-             $("#academicQualifications li:nth-child(2)").html(localStorage['inter']);
-             $("#academicQualifications li:nth-child(3)").html(localStorage['high']);
+				     $("#academicQualifications li:nth-child(1)").html(info.grad);
+             $("#academicQualifications li:nth-child(2)").html(info.inter);
+             $("#academicQualifications li:nth-child(3)").html(info.high);
 				   
 				    // write technical skills
-				    $("#pr").html(localStorage['p_skills']);
-				    $("#ql").html(localStorage['q_skills']);
-				    $("#ide").html(localStorage['ide']);
-				    $("#os").html(localStorage['os']);
+				    $("#pr").html(info.p_skills);
+				    $("#ql").html(info.q_skills);
+				    $("#ide").html(info.ide);
+				    $("#os").html(info.os);
 
   				    // Projects
 
-				   for(i=0;i<=localStorage['projectlen'];i++)
+				   for(i=0;i < info.project.length;i++)
            {
-            var data = localStorage['project'+i];
-            var $projects = $('#projects');
-            if(data !== "")
-            {
-            $projects.append("<li>"+data+"</li>");
-           }}
+            $('#projects').append("<li>"+info.project[i].detail+"</li>");
+           }
 				              
 				    //achievements
-            for(i=0; i<= localStorage['achievelen'];i++)
+            for(i=0; i< info.achieve.length;i++)
             {
-              var data=localStorage['achieve'+i];
-              var $achieve = $('#achivements');
-              if(data !=="")
-              {
-               $achieve.append("<li>"+data+"</li>");
-            }}
+              
+               $('#achivements').append("<li>"+info.achieve[i].detail+"</li>");
+            }
 				     
 				    // certifiactes
-             for(i=0; i<= localStorage['certilen'];i++)
+             for(i=0; i< info.certi.length;i++)
             {
-              var data=localStorage['certi'+i];
-              var $certi = $('#certifiactes');
-              if(data !== "")
-                { 
-                  $certi.append("<li>"+data+"</li>")
-            }}
+               
+                  $('#certifiactes').append("<li>"+info.certi[i].detail+"</li>")
+            }
           
 				     // personal dtails
-                    $("#mytr1").append("<td>"+localStorage['fathers_name']+"</td>");
-                    $("#mytr2").append("<td>"+localStorage['bday']+"</td>");
+                    $("#mytr1").append("<td>"+info.fathers_name+"</td>");
+                    $("#mytr2").append("<td>"+info.datepicker+"</td>");
                      var data='';
-                     for( i=0; i <=localStorage['langlen']; i++)
+                     for( i=0; i < info.lang.length; i++)
                      {
-                      var temp = localStorage['lang'+i];
-                      if(temp !== "")
-                      {
-
-                        data= data+temp;
-                      }
-                      if(i != localStorage['langlen'] )
+                        data= data+info.lang[i].detail;
+                      if(i != info.lang.length -1 )
                       {
                         data=data+", ";
                       }
                      }
                      $("#mytr3").append("<td>"+data+"</td>");
                      data='';
-                      for( i=0; i<= localStorage['hobbieslen']; i++)
+                      for( i=0; i< info.hobbies.length ; i++)
                       {
-                        var temp= localStorage['hobbies'+i];
-                        if(temop !== "")
-                        {
-                          data= data+temp;
-                        }
-                       if(i != localStorage['hobbieslen'])
+                       data= data+info.hobbies[i].detail;
+                       if(i != info.hobbies.length -1)
                       {
                         data=data+", ";
                       }
