@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="CSS/resume.css">
+      <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+        <title>
+            My Resume
+        </title>
+        <script src="JS/jquery-3.1.1.min.js" type="text/javascript"></script>
+        <script src="JS/template.js" type="text/javascript"></script>
+      </head>
+      <script type="text/javascript">
+    $(document).ready( function (){
+     $('i').click( function() {
+                      var $parent= $(this).parent().next();
+                      if($(this).hasClass("fa-arrow-down"))
+                      {
+                      $(this).removeClass("fa fa-arrow-down").addClass("fa fa-arrow-up");
+                      $parent.fadeIn(1000);
+                      } else
+                      {
+                        $(this).removeClass("fa fa-arrow-up").addClass("fa fa-arrow-down");
+                        $parent.fadeOut(1000);
+                      }
+                     });
+ });
+    </script>
+      <body>
+        <section class="main_section" ></section>
+        <script type="text/x-jQuery-tmpl" id="resumeTemplate">
+          <section id="header">
+            <br>
+              <b id="name"> ${name}</b>
+              <br>
+                <br>
+                  <span id="dob">${datepicker}</span>
+                  <p style="float:right">
+                    <b>Conatact No :</b>
+                    <b id ="num"> ${number}</b>
+                  </p>
+                  <br>
+                    <b>EMAIL : </b>
+                    <span id="email">${email} </span>
+                    <br>
+                      <br>
+                        <hr>
+                          <hr>
+                          </section>
+                          <div id="careers" >
+                            <section id="heading_1">Career objective 
+                              <i class="fa fa-arrow-down"  style="font-size:36px"></i>
+                            </section>
+                            <p style="font-size:20px;display:none;background-color: #f2ffe6" id="careerObjective" >${c_objective}
+               </p>
+                          </div>
+                          <div id="academics">
+                            <section id="heading_2">Academic Qualifications 
+                              <i class="fa fa-arrow-down"  style="font-size:36px"></i>
+                            </section>
+                            <ul id="academicQualifications" style="display:none;background-color: #ffcccc">
+                              <li>${grad}</li>
+                              <li>${inter}</li>
+                              <li>${high}</li>
+                            </ul>
+                          </div>
+                          <div id ="technicals" >
+                            <section id="heading_3">Technical skills 
+                              <i class="fa fa-arrow-down" style="font-size:36px"></i>
+                            </section>
+                            <ul id="technical_skills" style="display:none;background-color: #ffe6f2">
+                              <li>
+                                <pre> Programming Languages :  
+                                  <b id="pr">${p_skills}</b>
+                                </pre>
+                              </li>
+                              <li>
+                                <pre> Query Language        :   
+                                  <b id="ql">${q_skills}</b>
+                                </pre>
+                              </li>
+                              <li>
+                                <pre> IDE                   :   
+                                  <b id="ide">${ide}</b>
+                                </pre>
+                              </li>
+                              <li>
+                                <pre> Operating System      :   
+                                  <b id="os">${os}</b>
+                                </pre>
+                              </li>
+                            </ul>
+                          </div>
+                          <div id="project" >
+                            <section id="heading_4">Project and mini projects 
+                              <i class="fa fa-arrow-down" style="font-size:36px"></i>
+                            </section>
+                            <ul id="projects" style="display:none;width:100%;"> 
+             {{each project}}
+                
+                              <li>${detail}</li>
+          
+              {{/each}}
+             
+                            </ul>
+                          </div>
+                          <div id="achieve" >
+                            <section id="heading_5">Achivements 
+                              <i class="fa fa-arrow-down"  style="font-size:36px"></i>
+                            </section>
+                            <ul id="achivements" style="display:none;background-color: #ffe6ee">
+            {{each achieve}}
+                
+                              <li>${detail}</li>
+          
+              {{/each}}
+            
+                            </ul>
+                          </div>
+                          <div id="certi" >
+                            <section id="heading_6">Certificates 
+                              <i class="fa fa-arrow-down"   style="font-size:36px"></i>
+                            </section>
+                            <ul id="certifiactes" style="display:none;background-color: #cce6ff">
+            {{each certi}}
+                
+                              <li>${detail}</li>
+          
+              {{/each}}
+            
+                            </ul>
+                          </div>
+                          <div id="details" >
+                            <section id="heading_7">Personal details 
+                              <i class="fa fa-arrow-down"  style="font-size:36px"></i>
+                            </section>
+                            <table id="personalDetails" style= "display: none ; padding: 0px 0px 0px 30px" >
+                              <tr id="mytr1">
+                                <td>&#9642; Father-s name :-</td>
+                                <td>${fathers_name}</td>
+                              </tr>
+                              <tr id="mytr2">
+                                <td>&#9642; Date of Birth :-</td>
+                                <td>${datepicker}</td>
+                              </tr>
+                              <tr id="mytr3">
+                                <td>&#9642; Language :-</td>
+                                <td>{{each lang}}
+                ${detail},
+          
+              {{/each}}</td>
+                              </tr>
+                              <tr id="mytr4">
+                                <td>&#9642; Hobbies :-</td>
+                                <td>
+                   {{each hobbies}}
+                ${detail},
+          
+              {{/each}}</td>
+                              </tr>
+                            </table>
+                          </div>
+                          <hr>
+                            <hr>
+                            </script>
+                            <script type="text/javascript">
+        // Create an array of books
+        for (var i = 0; i < localStorage.length; i++){
+    // do something with localStorage.getItem(localStorage.key(i));
+        var infoData = JSON.parse(localStorage.getItem(localStorage.key(i)));
+ 
+       $("#resumeTemplate").tmpl(infoData).appendTo(".main_section");
+     }
+    
+                            </script>
+                          </body>
+                        </html>
